@@ -1,0 +1,37 @@
+<div class="container my-5">
+    <h1 mb-3>Add New Employee</h1>
+        <div class="row">
+            <div class="col-6">
+                <form [formGroup]="fileForm" (ngSubmit)="saveFileInfo()">
+              <!-- <form (submit)="onSubmit()"> -->
+                <div class="form-group" >
+                    <label for="empid">EmplyeeId</label>
+                    <input type="number" class="form-control" formControlName="emplyeeId" 
+                    name="emplyeeId">
+                  </div>
+                  <div class="form-group" >
+                      <label for="empname">EmployeeName</label>
+                      <input type="text" class="form-control" formControlName="employeeName" 
+                      name="employeeName">
+                    </div>
+                    <div class="form-group" >
+                      <label for="empdepartment">Department</label>
+                      <input type="text" class="form-control" formControlName="department" 
+                      name="department">
+                    </div>
+                    <div class="form-group" >
+                        <label for="empsalary">Salary</label>
+                        <input type="number" class="form-control" formControlName="salary" 
+                        name="salary">
+                      </div>
+                      <div class="form-group" >
+                          <label for="myFile">Add File</label>
+                          <input class="form-control" type="file"
+                          name="file" (change)="handleFileInput($event)">
+                    </div>
+                    <br>       
+                  <button type="submit" class="btn btn-success" (click) ="successAlert()">Submit</button>
+                </form> 
+            </div>
+        </div>   
+</div>
